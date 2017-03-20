@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<cabinet
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://uga-grenoble.fr/ville/cabinet'
+    xsi:schemaLocation='http://uga-grenoble.fr/ville/cabinet file:/Users/carineamin/NetBeansProjects/PAI/cabinet.xsd'>
+    <nom></nom>
+    <adresse>
+        <étage></étage>
+        <numéro></numéro>
+        <rue></rue>
+        <ville></ville>
+        <codePostale></codePostale>
+    </adresse>
+    <infirmiers id="">
+        <infirmier>
+            <nom></nom>
+            <prénom></prénom>
+            <photo></photo>
+        </infirmier>
+        <infirmier>
+            <nom></nom>
+            <prénom></prénom>
+            <photo></photo>
+        </infirmier>
+        <infirmier>
+            <nom></nom>
+            <prénom></prénom>
+            <photo></photo>
+        </infirmier>
+    </infirmiers>
+    <patients>
+        <patient>
+            <nom></nom>
+            <prénom></prénom>
+            <sexe></sexe>
+            <naissance></naissance>
+            <numéro></numéro>
+            <adresse>
+                <étage></étage>
+                <numéro></numéro>
+                <rue></rue>
+                <ville></ville>
+                <codePostale></codePostale>
+            </adresse>
+            <visite date="" intervenant="">
+                <acte id=""></acte>
+                <acte id=""></acte>
+                <acte id=""></acte>
+            </visite>
+        </patient>
+        <patient>
+            <nom></nom>
+            <prénom></prénom>
+            <sexe></sexe>
+            <naissance></naissance>
+            <numéro></numéro>
+            <adresse>
+                <étage></étage>
+                <numéro></numéro>
+                <rue></rue>
+                <ville></ville>
+                <codePostale></codePostale>
+            </adresse>
+            <visite date="" intervenant="">
+                <acte id=""></acte>
+            </visite>
+        </patient>
+        <patient>
+            <nom></nom>
+            <prénom></prénom>
+            <sexe></sexe>
+            <naissance></naissance>
+            <numéro></numéro>
+            <adresse>
+                <étage></étage>
+                <numéro></numéro>
+                <rue></rue>
+                <ville></ville>
+                <codePostale></codePostale>
+            </adresse>
+            <visite date="" intervenant="">
+                <acte id=""></acte>
+            </visite>
+        </patient>
+    </patients>
+
+</cabinet>

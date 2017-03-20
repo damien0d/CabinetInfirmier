@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<schema version="1.0"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://uga-grenoble.fr/ville/cabinet"
+            xmlns:cab="http://uga-grenoble.fr/ville/cabinet"
+            elementFormDefault="qualified">
+    
+    <element name="cabinet" type="cab:Cabinet"/>
+        <complexType name="Cabinet">
+            <sequence>
+                <element name="nom" type="string"/>
+                <element name="adresse" type="cab:Adresse"/>
+                <element name="infirmiers" type="cab:Infirmiers"/>
+                <element name="patients" type="cab:Patients"/>
+            </sequence>
+        </complexType>
+        
+        <complexType name="Adresse">
+            <sequence>
+                <element name="étage" type="int" minOccurs="0"/>
+                <element name="numéro" type="int" minOccurs="0"/>
+                <element name="rue" type="string"/>
+                <element name="ville" type="string"/>
+                <element name="codePostale" type="cab:CodePostale"/>
+            </sequence>
+        </complexType>
+        
+        <simpleType name="CodePostale">
+            <restriction base="integer">
+                <pattern value="[0-9][0-9][0-9][0-9][0-9]"/>
+            </restriction>
+        </simpleType>
+        
+        <complexType name="Infirmiers">
+            <sequence>
+                <element name="infirmier" type="cab:Infirmier" maxOccurs="unbounded"/>
+            </sequence>
+             <attribute name="id" type="cab:Id"/>
+        </complexType>
+        
+           <complexType name="Infirmier">
+            <sequence>
+                <element name="nom" type="string"/>
+                <element name="prénom" type="string"/>
+                <element name="photo" type="string"/>
+            </sequence>
+        </complexType>
+        
+        <simpleType name="Id">
+            <restriction base="integer">
+                <pattern value="[0-9][0-9][0-9]"/>
+            </restriction>
+        </simpleType>
+        
+         <complexType name="Patients">
+            <sequence>
+                <element name="patient" type="cab:Patient" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>                   
+        
+        <complexType name="Patient">
+            <sequence>
+                <element name="nom" type="string"/>
+                <element name="prénom" type="string"/>
+                <element name="sexe" type="cab:Sexe"/>
+                <element name="naissance" type="date"/>
+                <element name="numéro" type="cab:Numéro"/>
+                <element name="adresse" type="cab:Adresse"/>
+                <element name="visite" type="cab:Visite"/>
+            </sequence>
+        </complexType>
+        
+         <simpleType name="Sexe">
+            <restriction base="string">
+                <pattern value="[F]|[M]"/>
+            </restriction>
+        </simpleType>
+        
+        <simpleType name="Numéro">
+            <restriction base="integer">
+                <pattern value="[1-2][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
+            </restriction>
+        </simpleType>
+        
+        <attributeGroup name="visiteAttribute">
+            <attribute name="date" type="date"/>
+            <attribute name="intervenant" type="cab:Id"/>
+        </attributeGroup>
+        
+        <complexType name="Visite"> 
+            <sequence>
+              <element name="acte" type="cab:Acte" maxOccurs="unbounded"/>  
+            </sequence>
+            <attributeGroup ref="cab:visiteAttribute"/>
+        </complexType>
+        
+        <complexType name="Acte">
+            <attribute name="id" type="cab:Id"/>   
+        </complexType>
+        
+        
+</schema>
